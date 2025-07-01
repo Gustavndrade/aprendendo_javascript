@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>Contador</title>
+</head>
+<body class="bg-blue-500">
+    <header class="p-6">
+        <h1 class="text-white font-sans text-2xl font-semibold text-center mt-2">Contador</h1>
+    </header>
+    <section class="flex flex-col bg-white rounded-md p-4 w-[500px] m-auto mt-3 shadow-[0px_3px_15px]">
+        <div class="flex flex-col font-bold gap-3">
+            <label for="Inicio" >Inicio: 
+                <input type="number" id="Inicio" min="0"
+                class="bg-slate-100 border-1">
+            </label>
+            
+            <label for="Fim">Fim:
+                <input type="number" id="Fim" min="0"
+                class="bg-slate-100 border-1">
+            </label>
+            
+            <label for="Passo">Passo: 
+                <input type="number" id="Passo" min="0"
+                class="bg-slate-100 border-1">
+            </label>
+            <button onclick="Contador()" class="bg-slate-300 w-20 border-1 rounded focus:scale-95">Contar</button>
+            
+        </div>
+        <div id="resultado">
+            Preparando contagem...
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
