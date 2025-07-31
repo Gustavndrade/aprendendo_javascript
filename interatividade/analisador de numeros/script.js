@@ -1,20 +1,43 @@
 let escrita = document.getElementById('resultado')
 let adiciona = document.getElementById('resposta')
+let num = document.getElementById('numero')
 let numeros = [] 
 
-function Adicionar(){
-    let valor = document.getElementById('numero').value
-    let num = Number(valor)
-    escrita.innerText = ''
-
-    if(num < 0 || num > 100){
-        window.alert('Numero invalido ou já adicionado')
-    }else { 
-        numeros.push(num)
-        let item = document.createElement('option')
-        item.text += `numero ${num} adicionado`
-        adiciona.appendChild(item)
+function Limpa(){
+    escrita.innerHTML = ''
+    for(let i = 0; i < numeros.length; i++){
+        adiciona.remove(0)
     }
+} 
+
+function isNumero(n){
+    if(Number(n) >= 1 && Number(n) <=100){
+        return true
+    } else {
+        return false
+    }
+}
+
+function naLista(n, l){
+    if (l.indexOf(Number(n)) != -1){
+        return true
+    } else {
+        return false
+    }
+}
+
+function Adicionar(){
+if(isNumero(num.value) && !naLista(num.value, numeros)){
+    let item = document.createElement('option')
+    numeros.push(Number(num.value))
+    item.innerText += `Número ${num.value} adicionado`
+    adiciona.appendChild(item)
+    item.innerText += ''
+    
+    
+}else {
+    window.alert('Caracter invalido ou já adicionado')
+}
     
 }
 
@@ -35,13 +58,14 @@ for(let i = 0; i < numeros.length; i++){
     if(numeros[i] > maiorNumero){
         maiorNumero = numeros[i]
       }else
-       if (numeros[i] < menorNumero){
+         if (numeros[i] < menorNumero){
             menorNumero = numeros[i]
-         }
+        }
     } 
+    escrita.innerHTML = ''
     escrita.innerHTML += `Ao todo foram ${numeros.length} numeros cadastrados.<br>`
     escrita.innerHTML += `O maior Valor informado foi ${maiorNumero}.<br>`
     escrita.innerHTML += `O menor valor informado foi ${menorNumero}.<br>`
-    escrita.innerHTML += `O a soma dos valores informados foi ${soma}.<br>`
-    escrita.innerHTML += `O a media valores informados foi ${media}.<br>`
+    escrita.innerHTML += `A soma dos valores informados foi ${soma}.<br>`
+    escrita.innerHTML += `A media valores informados foi ${media}.<br>`
 }
