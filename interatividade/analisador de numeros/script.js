@@ -8,6 +8,7 @@ function Limpa(){
     for(let i = 0; i < numeros.length; i++){
         adiciona.remove(0)
     }
+    numeros.length = 0
 } 
 
 function isNumero(n){
