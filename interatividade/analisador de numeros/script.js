@@ -1,6 +1,6 @@
 let escrita = document.getElementById('resultado')
-let numeros = [] 
 let adiciona = document.getElementById('resposta')
+let numeros = [] 
 
 function Adicionar(){
     let valor = document.getElementById('numero').value
@@ -8,7 +8,7 @@ function Adicionar(){
     escrita.innerText = ''
 
     if(num < 0 || num > 100){
-        window.alert('Numero invalido')
+        window.alert('Numero invalido ou já adicionado')
     }else { 
         numeros.push(num)
         let item = document.createElement('option')
