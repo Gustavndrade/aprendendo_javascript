@@ -29,11 +29,11 @@ function naLista(n, l){
 
 function Adicionar(){
 if(isNumero(num.value) && !naLista(num.value, numeros)){
-    let item = document.createElement('option')
     numeros.push(Number(num.value))
-    item.innerText += `Número ${num.value} adicionado`
+    let item = document.createElement('option')
+    item.innerText = `Número ${num.value} adicionado`
     adiciona.appendChild(item)
-    item.innerText += ''
+    escrita.innerHTML = ''
     
     
 }else {
